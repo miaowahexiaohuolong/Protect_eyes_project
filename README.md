@@ -5,14 +5,12 @@
 
 MVP（最小可行性产品）切入点： 护眼类保健品（叶黄素、花青素等）。
 
-2. 所需数据集 (Datasets)
-你需要构建两个核心数据库（对抗数据集）：
+## 2. Dataset
 
-A. 科学/医学证据库 (The "Truth" Source)
+A. 科学/医学证据库 (The "Truth" Source)(这个部份还可以收集有关论文中的摘要)
 来源： PubMed, Cochrane Library, Google Scholar, ClinicalTrials.gov。
 
 数据内容：
-
 核心成分 (Ingredients)： 如叶黄素 (Lutein)、花青素 (Anthocyanin)、虾青素 (Astaxanthin)。
 
 研究类型 (Study Type)： 重点抓取 RCT (随机对照试验)、Meta-analysis (荟萃分析)。
@@ -22,7 +20,7 @@ A. 科学/医学证据库 (The "Truth" Source)
 证据等级 (Evidence Level)： 依据循证医学标准（A级-强证据，B级-中等，C级-弱/观察性研究，D级-专家意见/无证据）。
 
 B. 市场/营销语料库 (The "Hype" Source)
-来源： 小红书 (XiaoHongShu), 淘宝/京东详情页, 抖音 (TikTok) 热门带货视频字幕。
+来源： 小红书，微博，b站，抖音等社交媒体
 
 数据内容：
 
@@ -32,7 +30,7 @@ B. 市场/营销语料库 (The "Hype" Source)
 
 产品信息： 品牌、成分表、含量。
 
-3. 所需技术框架与栈 (Tech Stack & Frameworks)
+## 3. 所需技术框架与栈 (Tech Stack & Frameworks)
 为了实现从数据获取到智能体交互，建议使用以下技术栈：
 
 数据获取与处理 (ETL)
@@ -43,16 +41,14 @@ B. 市场/营销语料库 (The "Hype" Source)
 NLP/聚类： Scikit-learn (用于 TF-IDF/K-Means 聚类营销词汇)，Hugging Face Transformers (用于提取关键词)。
 
 智能体与大模型 (Agent & LLM)
-编排框架： LangChain 或 LlamaIndex (最核心框架)。用于构建 RAG (检索增强生成) 流程和 Tool 使用。
-
-大语言模型 (LLM)： GPT-4o, Claude 3.5 Sonnet (推理能力强，适合阅读文献) 或 DeepSeek (高性价比)。
+编排框架： LangChain or coze 。用于构建 RAG (检索增强生成) 流程和 Tool 使用。
 
 向量数据库 (Vector DB)： Pinecone, Milvus 或 ChromaDB。用于存储医学文献的 Embedding，以便Agent进行语义搜索。
 
 交互界面 (Frontend)
 快速演示： Streamlit 或 Gradio (Python 原生，开发极快)。
 
-4. 项目详细流程 (Project Workflow)
+## 4. 项目详细流程 (Project Workflow)
 根据图片逻辑，项目流程分为三个阶段：
 
 阶段一：数据准备与知识库构建 (Offline)
@@ -84,21 +80,6 @@ Compare: 营销文案声称“恢复视力”（夸大）。
 
 系统输出：证据等级评分卡、智商税预警、科学替代品推荐。
 
-5. 项目期望达到的目标 (Desired Outcomes/Goals)
-信息不对称的消除 (De-bunking)：
-
-通过 AI 自动量化“营销宣传”与“科学事实”之间的差距（Gap Analysis）。
-
-输出直观的对比图（如图2所述的“营销 vs 临床证据差距图”）。
-
-科学依据分级 (Evidence Grading)：
-
-不只是说“好”或“不好”，而是给出 A/B/C/D 等级，建立权威性。
-
-消费决策辅助 (Actionable Advice)：
-
-直接告诉用户：买（性价比高/证据确凿）、不买（证据不足/智商税）、或者平替（推荐叶黄素代替花青素）。
-
+## 5. 项目期望达到的目标 (Desired Outcomes/Goals)
 自动化流程：
-
 实现输入一个新产品，Agent 自动跑通全流程并生成报告。
