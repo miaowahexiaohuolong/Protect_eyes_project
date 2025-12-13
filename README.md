@@ -25,7 +25,7 @@ A local RAG-powered Streamlit app that verifies health product claims using PubM
 1. The data from html are collected in  "html_data" dictory
 2. The 'process_and_annotate.py' aims to intergate lots of html_data to be a table, and it can use deepseek model to extra the keyword and generate the trianing dataset.
 3. Run the 'train.py' that you can the dictory called 'processed_data', this dictory spilt the training data and vaild data, and test.py use test data, you can get the variation of loss while runing the 'trian.py'
-4. the dictory 'my_adapters_14b' can be used to put the training weigths from model
+4. the dictory 'my_adapters_7b' can be used to put the training weigths from model
 
 After doing these process, now our model can extra keyword more efficient.
 
