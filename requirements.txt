@@ -1,0 +1,27 @@
+# Requirements for Protect_eyes_project
+# Install with: pip install -r requirements.txt
+# Note: `ollama` (used to run the local Qwen model) is not a Python package — install and run it separately.
+
+streamlit>=1.19.0
+pymed>=0.5.0
+langchain>=0.0.200,<1.0.0
+langchain-huggingface>=0.0.6,<1.0.0
+langchain-community>=0.0.10,<1.0.0
+chromadb>=0.3.26
+sentence-transformers>=2.2.2
+transformers>=4.30.0
+huggingface-hub>=0.15.1
+torch>=1.13.1
+
+# Optional / dev helpers
+python-dotenv>=1.0.0
+requests>=2.28.0
+
+# Web scraping / automation
+selenium>=4.20.0
+webdriver-manager>=4.0.0
+pandas>=2.0.0
+beautifulsoup4>=4.12.0
+beautifulsoup4>=4.11.0
+webdriver_manager>=3.8.5
+selenium>=4.8.0
